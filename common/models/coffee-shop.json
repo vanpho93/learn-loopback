@@ -1,0 +1,24 @@
+{
+  "name": "CoffeeShop",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "getName": {
+      "http": { "path": "/getname", "verb": "get" },
+      "accepts": { "arg": "id", "type": "string", "required": true, "http": { "source": "query" } },
+      "returns": { "arg": "name", "type": "string" }
+    }
+  }
+}
